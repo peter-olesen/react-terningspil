@@ -1,8 +1,5 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Terningspil
+## A game about winning
+You play by rolling two dice. The AI then does the same. 6 rounds go by like that, and at the end of the 6th round, a winner is declared.
+The game has the theme of lucha libre, which incorporates strong and diverse colors as well as an underrepresented culture in the West.
+The layout is simple and easy to navigate for new players.
