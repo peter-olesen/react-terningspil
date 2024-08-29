@@ -1,14 +1,14 @@
+import { Game } from "./components/game/game";
+import { Wrapper } from "./modules/Wrapper"
 import { useState } from "react";
 import "./App.scss";
-import "./modules/Wrapper"
 
 function App() {
   return (
-  <>
+
   <Wrapper>
-    <h1>Hey</h1>
+    <Game/>
   </Wrapper>
-  </>
   );
 }
 
