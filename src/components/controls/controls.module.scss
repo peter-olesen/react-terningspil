@@ -1,32 +1,55 @@
+@use "../../assets/styles/Variables.module.scss" as v;
 
+@font-face {
+  src: url("../../assets/mexican_fiesta/mexican_fiesta_Bold.ttf");
+  font-family: "Mexican Fiesta Bold";
+}
+
+@font-face {
+  src: url("../../assets/mexican_fiesta/mexican_fiesta.ttf");
+  font-family: "Mexican Fiesta";
+}
 
 .controls {
-    text-align: center;
-    margin: 20px;
+  margin: 20px;
+  text-align: center;
+  width: 13vw;
 
-    p {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
+  h2 {
+    font-family: "Mexican Fiesta";
+    font-size: 3.9vh;
+    text-shadow: -1px -1px rgba(255, 255, 255, 0.5),
+      1px -1px rgba(255, 255, 255, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  img {
+    filter: drop-shadow(0.5rem 0 1rem black)
+  }
+
+  p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .button {
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: #ccc;
     }
 
-    .button {
-        padding: 10px 20px;
-        font-size: 18px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-
-        &:not(:disabled):hover {
-            background-color: #0056b3;
-        }
+    &:not(:disabled):hover {
+      background-color: #0056b3;
     }
+  }
 }

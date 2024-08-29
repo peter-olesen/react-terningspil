@@ -1,8 +1,8 @@
 @use "../../assets/styles/Variables.module.scss" as v;
 
 @font-face {
-  font-family: "Mexican Fiesta";
   src: url("../../assets/mexican_fiesta/mexican_fiesta_Bold.ttf");
+  font-family: "Mexican Fiesta";
 }
 
 .player {
@@ -30,12 +30,13 @@
   }
 
   h2 {
-    font-family: "Mexican Fiesta";
     margin-bottom: 10px;
     color: #333;
     font-size: 24px;
-    text-shadow: -1px -1px rgba(255, 255, 255, 0.5), 1px -1px rgba(255, 255, 255, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
     font-size: 10vh;
+    font-family: "Mexican Fiesta";
+    text-shadow: -1px -1px rgba(255, 255, 255, 0.5),
+      1px -1px rgba(255, 255, 255, 0.5), -1px 1px 0 rgba(0, 0, 0, 0.5);
   }
 
   .diceContainer {
