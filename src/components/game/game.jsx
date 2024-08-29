@@ -103,7 +103,7 @@ export const Game = () => {
     return (
         <div className={styles.game}>
             <Player
-                name="Player 1"
+                name="Player"
                 diceValue={player1Dice}
                 score={player1Score}
                 rolling={rolling && currentPlayer === 'Player 1'}
