@@ -5,11 +5,11 @@ import { Popup } from "../popup/popup";
 import styles from './game.module.scss';
 
 export const Game = () => {
-    const [player1Score, setPlayer1Score] = useState(0);
+    const [playerScore, setPlayerScore] = useState(0);
     const [aiScore, setAiScore] = useState(0);
-    const [player1Dice, setPlayer1Dice] = useState([null, null]);
+    const [playerDice, setPlayerDice] = useState([null, null]);
     const [aiDice, setAiDice] = useState([null, null]);
-    const [player1Rolls, setPlayer1Rolls] = useState(0);
+    const [playerRolls, setPlayerRolls] = useState(0);
     const [aiRolls, setAiRolls] = useState(0);
     const [currentPlayer, setCurrentPlayer] = useState("Player");
     const [rolling, setRolling] = useState(false);
@@ -17,7 +17,7 @@ export const Game = () => {
     const [gameResult, setGameResult] = useState('');
     const maxRolls = 6;
 
-    const gameOver = player1Rolls === maxRolls && aiRolls === maxRolls;
+    const gameOver = playerRolls === maxRolls && aiRolls === maxRolls;
 
     const rollDice = () => {
         if (gameOver) return;
@@ -27,11 +27,11 @@ export const Game = () => {
         const rollValue2 = Math.floor(Math.random() * 6) + 1;
 
         setTimeout(() => {
-            if (currentPlayer === 'Player 1') {
-                if (player1Rolls < maxRolls) {
-                    setPlayer1Dice([rollValue1, rollValue2]);
-                    setPlayer1Score(prev => prev + rollValue1 + rollValue2);
-                    setPlayer1Rolls(prev => prev + 1);
+            if (currentPlayer === 'Player') {
+                if (playerRolls < maxRolls) {
+                    setPlayerDice([rollValue1, rollValue2]);
+                    setPlayerScore(prev => prev + rollValue1 + rollValue2);
+                    setPlayerRolls(prev => prev + 1);
                     setCurrentPlayer('AI');
                     rollAiDice();
                 }
@@ -48,10 +48,10 @@ export const Game = () => {
                 setAiDice([rollValue1, rollValue2]);
                 setAiScore(prev => prev + rollValue1 + rollValue2);
                 setAiRolls(prev => prev + 1);
-                setCurrentPlayer('Player 1');
+                setCurrentPlayer('Player');
             }
 
-            if (player1Rolls === maxRolls && aiRolls === maxRolls) {
+            if (playerRolls === maxRolls && aiRolls === maxRolls) {
                 setGameOver(true);
                 determineWinner();
             }
@@ -62,9 +62,9 @@ export const Game = () => {
 
     const determineWinner = () => {
         let result;
-        if (player1Score > aiScore) {
-            result = 'Player 1 Wins!';
-        } else if (aiScore > player1Score) {
+        if (playerScore > aiScore) {
+            result = 'Player Wins!';
+        } else if (aiScore > playerScore) {
             result = 'AI Wins!';
         } else {
             result = "It's a Tie!";
@@ -75,11 +75,11 @@ export const Game = () => {
     };
 
     const restartGame = () => {
-        setPlayer1Score(0);
+        setPlayerScore(0);
         setAiScore(0);
-        setPlayer1Dice([null, null]);
+        setPlayerDice([null, null]);
         setAiDice([null, null]);
-        setPlayer1Rolls(0);
+        setPlayerRolls(0);
         setAiRolls(0);
         setCurrentPlayer('Player');
         setRolling(false);
@@ -104,10 +104,10 @@ export const Game = () => {
         <div className={styles.game}>
             <Player
                 name="Player"
-                diceValue={player1Dice}
-                score={player1Score}
-                rolling={rolling && currentPlayer === 'Player 1'}
-                rollsLeft={maxRolls - player1Rolls}
+                diceValue={playerDice}
+                score={playerScore}
+                rolling={rolling && currentPlayer === 'Player'}
+                rollsLeft={maxRolls - playerRolls}
             />
             <Player 
                 name="AI"
