@@ -11,7 +11,7 @@ export const Game = () => {
     const [aiDice, setAiDice] = useState([null, null]);
     const [player1Rolls, setPlayer1Rolls] = useState(0);
     const [aiRolls, setAiRolls] = useState(0);
-    const [currentPlayer, setCurrentPlayer] = useState("Player 1");
+    const [currentPlayer, setCurrentPlayer] = useState("Player");
     const [rolling, setRolling] = useState(false);
     const [popupVisible, setPopupVisible] = useState(false);
     const [gameResult, setGameResult] = useState('');
@@ -81,7 +81,7 @@ export const Game = () => {
         setAiDice([null, null]);
         setPlayer1Rolls(0);
         setAiRolls(0);
-        setCurrentPlayer('Player 1');
+        setCurrentPlayer('Player');
         setRolling(false);
         setPopupVisible(false);
     };
@@ -103,7 +103,7 @@ export const Game = () => {
     return (
         <div className={styles.game}>
             <Player
-                name="Player 1"
+                name="Player"
                 diceValue={player1Dice}
                 score={player1Score}
                 rolling={rolling && currentPlayer === 'Player 1'}
