@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Player } from "../player/player";
 import { Controls } from "../controls/controls";
 import { Popup } from "../popup/popup";
+import { Rules } from "../rules/rules";
 import styles from './game.module.scss';
 
 export const Game = () => {
@@ -15,6 +16,7 @@ export const Game = () => {
     const [rolling, setRolling] = useState(false);
     const [popupVisible, setPopupVisible] = useState(false);
     const [gameResult, setGameResult] = useState('');
+    const [rulesVisible, setRulesVisible] = useState(true);
     const maxRolls = 6;
 
     const gameOver = playerRolls === maxRolls && aiRolls === maxRolls;
@@ -102,6 +104,7 @@ export const Game = () => {
 
     return (
         <div className={styles.game}>
+            {rulesVisible && <Rules onClose={() => setRulesVisible(false)} />}
             <Player
                 name="Player"
                 diceValue={playerDice}

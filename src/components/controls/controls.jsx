@@ -14,7 +14,7 @@ export const Controls = ({ onRollDice, currentPlayer, rolling}) => {
             <h2>{currentPlayer}'s Turn</h2>
             {currentPlayer === 'Player' && <img src={FlatMaskIcon} alt="Player 1 Mask"/>}
             {currentPlayer === 'AI' && <img src={StripedMaskIcon} alt="AI Mask"/>}
-            <button onClick={onRollDice} disabled={rolling}>
+            <button className={styles.rollButton} onClick={onRollDice} disabled={rolling}>
                 {rolling ? 'Rolling...' : 'Roll Dice'}
             </button>
         </div>
